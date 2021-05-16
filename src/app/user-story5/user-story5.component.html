@@ -17,8 +17,9 @@
 
 
         <!--TEST DROPDOWN-->
+      
 
-        <div class="btn-group dropdown">
+        <div class="btn-group dropdown col-md-4">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             {{myTeam ? myTeam.name : "My Team"}}
@@ -30,11 +31,12 @@
             </li>
           </div>
         </div>
+   
 
 
-
-        <div class="btn-group">
-          <div class="btn-group dropdown" role="group">
+    
+       
+          <div class="btn-group dropdown  col-md-4" role="group">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               {{myRivalTeam ? myRivalTeam.name : "My Rival Team"}}
@@ -47,9 +49,10 @@
             </div>
           </div>
 
-        </div>
+       
+     
 
-        <div class="container" *ngIf="games">
+        <div *ngIf="games">
           <div class="row">
             <div class="col-md-12" style="margin-top:10px">
               <table class="table">
