@@ -1,64 +1,107 @@
-
-
-
 <div class="container">
-    <div class="row">
-      <div class="col-md-12" style="margin-top:30px">
-        <table class="table">
-          <table class="center">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:30px">
+      <table class="table">
+        <table class="center">
           <thead class="thead-dark text-center">
-    <tr>
-        <th>User Story 5:<br>“As a fan, I want to see the results between my team and my team’s rival this season”</th>
-  
-    </tr>
-  </thead>
-  <tbody>
-  
-  <br><br></table>
+            <tr>
+              <th>User Story 5:<br>“As a fan, I want to see the results between my team and my team’s rival this season”
+              </th>
 
-  
-  <!--TEST DROPDOWN-->
-  
-  <div class="btn-group dropdown">
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      My Team
-    </button>
-    <div class="dropdown-menu">
-      <li *ngFor="let team of teams" (click)="onSelect(myTeam)"> {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px" height="40px"><br>
-      </li>
-    </div>
-  </div>
+            </tr>
+          </thead>
+          <tbody>
 
-  
-
-  <div class="btn-group">
-    <div class="btn-group dropdown" role="group">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         My Rival Team
-      </button>
-      <div class="dropdown-menu">
-        <li *ngFor="let team of teams" (click)="onSelect(myRivalTeam)"> {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px" height="40px"><br>
-        </li>
-      </div>
-    </div> 
-    
-  </div>
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12" style="margin-top:10px">
-        <table class="table">
-          <table class="center">
-          <thead class="thead-dark">      
-          <tr>    
-            <app-venue-results [team]="selectedTeam"></app-venue-results>
-        </tr>
-      </thead>
+            <br><br>
         </table>
-      </table>
+
+
+        <!--TEST DROPDOWN-->
+
+        <div class="btn-group dropdown">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            {{myTeam ? myTeam.name : "My Team"}}
+          </button>
+          <div class="dropdown-menu">
+            <li *ngFor="let team of teams" (click)="onSelect2(team)"> {{team.name}} <img
+                src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px"
+                height="40px" (click)="onSelect2(team)"><br>
+            </li>
+          </div>
         </div>
-  
-  <!--<div class="btn-group col-md-2" >
+
+
+
+        <div class="btn-group">
+          <div class="btn-group dropdown" role="group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              {{myRivalTeam ? myRivalTeam.name : "My Rival Team"}}
+            </button>
+            <div class="dropdown-menu">
+              <li *ngFor="let team of teams" (click)="onSelect3(team)"> {{team.name}} <img
+                  src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px"
+                  height="40px" (click)="onSelect3(team)"><br>
+              </li>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="container" *ngIf="games">
+          <div class="row">
+            <div class="col-md-12" style="margin-top:10px">
+              <table class="table">
+                <table class="center">
+                  <thead class="thead-dark">
+                    <!-- <tr>    
+            <app-venue-results [team]="selectedTeam"></app-venue-results>
+        </tr> -->
+
+                    <th>
+
+                      Home Team
+                    </th>
+                    <th>
+                      Away Team
+                    </th>
+                    <th>
+                      Home Team Score
+                    </th>
+                    <th>
+                      Away Team Score
+                    </th>
+                    <th>
+                      Winner
+                    </th>
+
+                  </thead>
+                  <!-- CHANGES MADE HERE TO DISPLAY GAMES BETWEEN MY TEAM AND RIVAL TEAM -->
+                  <tbody>
+                    <tr *ngFor="let game of games">
+                      <td>
+                        {{game.hteam}}
+                      </td>
+                      <td>
+                        {{game.ateam}}
+                      </td>
+                      <td>
+                        {{game.hscore}}
+                      </td>
+                      <td>
+                        {{game.ascore}}
+                      </td>
+                      <td>
+                        {{game.winner}}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </table>
+            </div>
+
+            <!--<div class="btn-group col-md-2" >
       <button class="btn btn-secondary btn-lg dropdown-toggle" style="margin-right:60%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           My Team
       </button>
@@ -87,11 +130,11 @@
         </table>
       </table>
         </div>-->
-  
-        <!--SECOND DROPDOWN-->
-     
-      
-          <!--<div class="btn-group col-md-2" >
+
+            <!--SECOND DROPDOWN-->
+
+
+            <!--<div class="btn-group col-md-2" >
             <button class="btn btn-secondary btn-lg dropdown-toggle" style="margin-right:60%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Team
             </button>
@@ -120,3 +163,5 @@
               </table>
             </table>
               </div>-->
+          </div>
+        </div>

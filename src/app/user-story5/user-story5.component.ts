@@ -26,9 +26,6 @@ export class UserStory5Component implements OnInit {
 
   ngOnInit(): void {
     this.getAFLTeams();
-   
-   
-    
   }
   ngOnChanges(changes: SimpleChanges) {
     if (changes['team']) {
@@ -76,11 +73,13 @@ export class UserStory5Component implements OnInit {
 
   onSelect3(team: Team): void {
     this.myRivalTeam = team;
+    this.getMyTeamRival();
   }
 
   getMyTeamRival(): void { 
     this.dataService.getGames().subscribe(temp => {
       var tempArr = [];
+      console.log(temp);
 
       temp.forEach(element => {
         if ((element.ateam == this.myTeam.name || element.ateam == this.myRivalTeam.name)
