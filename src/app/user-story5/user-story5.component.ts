@@ -14,11 +14,10 @@ import { DataService } from '../data.service';
 export class UserStory5Component implements OnInit {
   teams!: Team[];
   selectedTeam!: Team;
-  tips!: Tip[];
-  selectedTip!: Tip;
+
  
-  myTeam!: Team[];
-  rivalTeam!: Team[];
+  myTeam!: Team;
+  myRivalTeam!: Team;
   games!:Game[];
   @Input() team!: Team;
   
@@ -27,7 +26,7 @@ export class UserStory5Component implements OnInit {
 
   ngOnInit(): void {
     this.getAFLTeams();
-    this.getTips();
+   
    
     
   }
@@ -45,9 +44,8 @@ export class UserStory5Component implements OnInit {
     this.dataService.getTeams().subscribe(temp => { this.teams = temp; });
   }
 
-  getTips(): void {
-    this.dataService.getTips().subscribe(temp => { this.tips = temp; });
-  }
+  
+
   getGames(): void {
     this.dataService.getGames().subscribe(temp => { 
       var tempArr: Game[] = [];
@@ -59,19 +57,41 @@ export class UserStory5Component implements OnInit {
       this.games = tempArr;    
     });
   }
-  /*getMyTeamRival(): void { 
+
+  getMyTeam(): void {
     this.dataService.getGames().subscribe(temp => {
       var tempArr = [];
 
       temp.forEach(element => {
-        if ((element.ateam == this.myTeam.name || element.ateam == this.rivalTeam.name)
-          && (element.hteam == this.myTeam.name || element.hteam == this.rivalTeam.name) && element.year == 2021) tempArr.push(element)
+        if (element.ateam == this.myTeam.name || element.hteam == this.myTeam.name) tempArr.push(element)
+      });
 
-      })
+      this.games = tempArr;
+    });
+  }
+
+  onSelect2(team: Team): void {
+    this.myTeam = team;
+  }
+
+  onSelect3(team: Team): void {
+    this.myRivalTeam = team;
+  }
+
+  getMyTeamRival(): void { 
+    this.dataService.getGames().subscribe(temp => {
+      var tempArr = [];
+
+      temp.forEach(element => {
+        if ((element.ateam == this.myTeam.name || element.ateam == this.myRivalTeam.name)
+          && (element.hteam == this.myTeam.name || element.hteam == this.myRivalTeam.name) && element.year == 2021) tempArr.push(element)
+
+      }) 
 
       this.games = tempArr;
     })
-  }*/
+  }
+
 
   
 }

@@ -15,11 +15,50 @@
   <tbody>
   
   <br><br></table>
+
   
+  <!--TEST DROPDOWN-->
   
+  <div class="btn-group dropdown">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      My Team
+    </button>
+    <div class="dropdown-menu">
+      <li *ngFor="let team of teams" (click)="onSelect(myTeam)"> {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px" height="40px"><br>
+      </li>
+    </div>
+  </div>
+
   
+
+  <div class="btn-group">
+    <div class="btn-group dropdown" role="group">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         My Rival Team
+      </button>
+      <div class="dropdown-menu">
+        <li *ngFor="let team of teams" (click)="onSelect(myRivalTeam)"> {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px" height="40px"><br>
+        </li>
+      </div>
+    </div> 
+    
+  </div>
   
-    <div class="btn-group col-md-2" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top:10px">
+        <table class="table">
+          <table class="center">
+          <thead class="thead-dark">      
+          <tr>    
+            <app-venue-results [team]="selectedTeam"></app-venue-results>
+        </tr>
+      </thead>
+        </table>
+      </table>
+        </div>
+  
+  <!--<div class="btn-group col-md-2" >
       <button class="btn btn-secondary btn-lg dropdown-toggle" style="margin-right:60%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           My Team
       </button>
@@ -47,15 +86,37 @@
       </thead>
         </table>
       </table>
-        </div>
+        </div>-->
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+        <!--SECOND DROPDOWN-->
+     
+      
+          <!--<div class="btn-group col-md-2" >
+            <button class="btn btn-secondary btn-lg dropdown-toggle" style="margin-right:60%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Team
+            </button>
+            
+            
+              <ul class="dropdown-menu">
+                <li *ngFor="let team of teams" (click)="onSelect(team)"> {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px" height="40px"><br>
+                </li>
+        
+              </ul> 
+        
+            </div>
+          
+      
+         
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" style="margin-top:10px">
+              <table class="table">
+                <table class="center">
+                <thead class="thead-dark">      
+                <tr>    
+                  <app-venue-results [team]="selectedTeam"></app-venue-results>
+              </tr>
+            </thead>
+              </table>
+            </table>
+              </div>-->
