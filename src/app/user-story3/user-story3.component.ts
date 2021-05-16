@@ -60,6 +60,7 @@ export class UserStory3Component implements OnInit {
   getMyTeam(): void {
     this.dataService.getGames().subscribe(temp => {
       var tempArr: Game[] = [];
+
       temp.forEach(element => {
         if (element.ateam == this.myTeam.name || element.hteam == this.myTeam.name) tempArr.push(element)
       });

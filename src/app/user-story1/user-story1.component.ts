@@ -20,7 +20,7 @@ export class UserStory1Component implements OnInit {
   myTeam!: Team;
   myRivalTeam!: Team;
   games!:GamesFinished[];
-  nextFour!: GamesFinished[];
+  nextFour!: Tip[];
   @Input() team!: Team;
   
 
@@ -58,13 +58,13 @@ export class UserStory1Component implements OnInit {
 
   getMyTeam(): void {
     this.dataService.getGames().subscribe(temp => {
-      var tempArr = [];
+      var tempArr: Game[] = [];
 
       temp.forEach(element => {
         if (element.ateam == this.myTeam.name || element.hteam == this.myTeam.name) tempArr.push(element)
       });
 
-      tempArr:Games[ ]=[ ]
+      this.games = tempArr;
     });
   }
 
@@ -79,7 +79,7 @@ export class UserStory1Component implements OnInit {
   
   getNextFourMatches(): void {
     this.dataService.getTips().subscribe(temp => {
-      var tempArr = [];
+      var tempArr: Tip[] = [];
 
       temp.forEach(element => {
         if ((element.ateamid == this.selectedTeam.id || element.hteamid == this.selectedTeam.id) && element.year == 2021)
@@ -98,7 +98,7 @@ export class UserStory1Component implements OnInit {
 
   getMyTeamRival(): void { 
     this.dataService.getGames().subscribe(temp => {
-      var tempArr = [];
+      var tempArr: Game[] = [];
       console.log(temp);
 
       temp.forEach(element => {
