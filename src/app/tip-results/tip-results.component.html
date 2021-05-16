@@ -1,0 +1,27 @@
+
+<div>
+    <div *ngIf = "team">
+        <table sytle = "text-align: center;">
+            <tr>
+                <th>Home Team</th>
+                <th>Home Team Tip</th>
+                <th>Away Team</th>
+                <th>Away Team Tip</th>
+                <th>Tip</th>
+                <th>Source</th>
+                <th>Round</th>
+            </tr>
+
+            <tr *ngFor ="let tip of tips">
+                <td>{{tip.hteam}}</td>
+                <td>{{tip.hconfidence}}%</td>
+                <td>{{tip.ateam}}</td>
+                <td>{{100-tip.confidence}}%</td>
+                <td>{{tip.tip}}</td>
+                <td>{{tip.source}}</td>
+                <td>{{tip.round}}</td>
+                
+            </tr>
+        </table>
+    </div>
+</div>

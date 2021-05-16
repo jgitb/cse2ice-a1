@@ -1,0 +1,67 @@
+<p>PLAYERS WORKS</p>
+<!--Teams list-->
+<style>
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+</style>
+<div>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12" style="margin-top:30px">
+            <table class="table">
+                 <table class="center">
+              <thead class="thead-dark">
+        <tr>
+            <th>Team</th>
+            <th>Logo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let team of teams"> 
+            <td>{{team.name}}</td>
+            <td><img src="https://squiggle.com.au/{{team.logo}}"></td>
+        </tr>
+    </table>
+    <br><br>
+
+
+<!--Results for a round of games-->
+<!--<div>
+    <table style="text-align:center;">
+        <tr>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Score</th>
+            <th>Winer</th>
+        </tr>
+
+        <tr *ngFor="let game of games">
+            <td>{{game.hteam}}</td>
+            <td>{{game.ateam}}</td>
+            <td>{{game.hscore}}-{{game.ascore}}</td>
+            <td>{{game.winner}}</td>
+        </tr>
+    </table>
+    <br><br>
+</div>-->
+
+<!--Tips for a round of games-->
+<!--<div>
+    <table style="text-align:center;">
+        <tr>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Tip</th>
+            <th>Source</th>
+        </tr>
+
+        <tr *ngFor="let t of tips">
+            <td>{{t.hteam}}</td>
+            <td>{{t.ateam}}</td>
+            <td>{{t.tip}}</td>
+            <td>{{t.source}}</td>
+        </tr>
+    </table>
+    <br><br>
+</div>-->

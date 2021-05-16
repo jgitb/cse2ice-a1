@@ -1,0 +1,61 @@
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top:30px">
+        <table class="table">
+          <table class="center">
+          <thead class="thead-dark text-center">
+    <tr>
+        <th>User Story 4:<br>“As a fan, I want to see all the venues where my team has won so far this season”</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+  
+  <br><br></table>
+  
+  
+  
+  
+    <div class="btn-group col-md-2" >
+      <button class="btn btn-secondary btn-lg dropdown-toggle" style="margin-right:60%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Team
+      </button>
+      
+      
+        <ul class="dropdown-menu">
+          <li *ngFor="let team of teams" (click)="onSelect(team)"> {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px" height="40px"><br>
+          </li>
+  
+        </ul> 
+  
+      </div>
+    
+
+   
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top:10px">
+        <table class="table">
+          <table class="center">
+          <thead class="thead-dark">      
+          <tr>    
+            <app-venue-results [team]="selectedTeam"></app-venue-results>
+        </tr>
+      </thead>
+        </table>
+      </table>
+        </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

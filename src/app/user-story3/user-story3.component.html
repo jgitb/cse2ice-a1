@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top:30px">
+        <table class="table">
+          <table class="center">
+            <thead class="thead-dark text-center">
+    <tr>
+        <th>User Story 3:<br>“As a fan, I want to see the opponent and games details for the next 4 matches my team will play”</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+  
+  <br><br></table>
+  
+  <!--<p>“As a fan, I want to see the results of all games my team has played this season”</p>-->
+  
+  
+  <!--<div class="dropdown" style="margin-right:6%;" *ngIf="selectedTeam">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite team
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li *ngFor="let team of teams" (click)="onSelect(team)"> {{team.name}}<br>
+      </li>
+    </ul>
+    <app-user-story2 [team]="selectedTeam"></app-user-story2>
+  </div>-->
+  
+  
+  
+    <div class="btn-group col-md-2" >
+      <button class="btn btn-secondary btn-lg dropdown-toggle" style="margin-right:60%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Team
+      </button>
+      
+      
+        <ul class="dropdown-menu">
+          <li *ngFor="let team of teams" (click)="onSelect(team)"> {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px" height="40px"><br>
+          </li>
+  
+        </ul> 
+  
+      </div>
+    
+    
+  <!--WORKING CODE DO NOT DELETE-->
+   
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top:10px">
+        <table class="table">
+          <table class="center">
+          <thead class="thead-dark">      
+          <tr>    
+            <app-team-result [team]="selectedTeam"></app-team-result>
+        </tr>
+      </thead>
+        </table>
+      </table>
+        </div>
+  
+  
