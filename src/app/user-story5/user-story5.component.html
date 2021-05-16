@@ -1,0 +1,110 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:30px">
+      <table class="table">
+        <table class="center">
+          <thead class="thead-dark text-center">
+            <tr>
+              <th>User Story 5:<br>“As a fan, I want to see the results between my team and my team’s rival this season”
+              </th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <br><br>
+        </table>
+
+        <div class="btn-group dropdown col-md-2" style="margin-top:-30px">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            {{myTeam ? myTeam.name : "My Team"}}
+          </button>
+          <div class="dropdown-menu">
+            <li *ngFor="let team of teams" (click)="onSelect2(team)"> {{team.name}} <img
+                src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px"
+                height="40px" (click)="onSelect2(team)"><br>
+            </li>
+          </div>
+        </div>
+  
+          <div class="btn-group dropdown  col-md-2"style="margin-top:-30px" role="group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              {{myRivalTeam ? myRivalTeam.name : "My Rival Team"}}
+            </button>
+            <div class="dropdown-menu">
+              <li *ngFor="let team of teams" (click)="onSelect3(team)"> {{team.name}} <img
+                  src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px"
+                  height="40px" (click)="onSelect3(team)"><br>
+              </li>
+            </div>
+          </div>
+
+        <div *ngIf="games">
+          <div class="row">
+            <div class="col-md-12" style="margin-top:10px">
+              <table class="table">
+                <table class="center">
+                  <thead class="thead-dark">
+                    <th>
+                      Home Team
+                    </th>
+                    <th>
+                      Away Team
+                    </th>
+                    <th>
+                      Home Team Score
+                    </th>
+                    <th>
+                      Away Team Score
+                    </th>
+                    <th>
+                      Winner
+                    </th>
+                    <th>
+                      Date
+                    </th>
+
+                  </thead>
+                 
+                  <tbody>
+                    <tr *ngFor="let game of games">
+                      <td>
+                        {{game.hteam}}
+                      </td>
+                      <td>
+                        {{game.ateam}}
+                      </td>
+                      <td>
+                        {{game.hscore}}
+                      </td>
+                      <td>
+                        {{game.ascore}}
+                      </td>
+                      <td>
+                        {{game.winner}}
+                      </td>
+                      <td>
+                        {{game.date}}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </table>
+            </div>
+            </div>
+            </div>
+            </table>
+            </div>
+            </div>
+            </div>
+          
+            <footer class="footer">
+              <p><strong>Website made by 20753641</strong></p>
+               <p>
+                <a href="#"><strong>Back to top</strong></a>
+              </p>
+            </footer> 

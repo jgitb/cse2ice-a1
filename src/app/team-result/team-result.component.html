@@ -1,0 +1,26 @@
+
+<div>
+    <div *ngIf = "team">
+        <table sytle = "text-align: center;">
+            <tr>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Score</th>
+                <th>Winner</th>
+                <th>Date</th>
+                <th>Venue</th>
+
+            </tr>
+
+            <tr *ngFor ="let game of games">
+                <td>{{game.hteam}}</td>
+                <td>{{game.ateam}}</td>
+                <td>{{game.hscore}}-{{game.ascore}}</td>
+                <td>{{game.winner}}</td>
+                <td>{{game.date}}</td>
+                <td>{{game.venue}}</td>
+                
+            </tr>
+        </table>
+    </div>
+</div>

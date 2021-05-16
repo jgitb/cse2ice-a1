@@ -1,0 +1,36 @@
+<!--Teams list-->
+<style>
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+</style>
+<div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12" style="margin-top: 30px">
+          <table class="table">
+               <table class="center">
+            <thead class="thead-dark">
+      <tr>
+       
+          <th style="text-align:center">Current Teams in the AFL</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let team of teams"> 
+       
+          <td style="text-align:center"><img src="https://squiggle.com.au/{{team.logo}}"> <br><br><strong>{{team.name}}</strong></td>
+      </tr>
+  </table>
+  <br><br>
+</table>
+        </div>
+        </div>
+        </div>
+
+        <footer class="footer">
+          <p><strong>Website made by 20753641</strong></p>
+           <p>
+            <a href="#"><strong>Back to top</strong></a>
+          </p>
+        </footer> 

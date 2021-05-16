@@ -1,0 +1,112 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12" style="margin-top:30px">
+      <table class="table">
+        <table class="center">
+        <thead class="thead-dark text-center">
+  <tr>
+      <th>User Story 1:<br>“As a fan, I want to see the prediction that my team will win their next game”</th>
+
+  </tr>
+</thead>
+<tbody>
+
+<br><br></table>
+
+        <div class="btn-group dropdown col-md-1" style="margin-top:-30px">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            {{myTeam ? myTeam.name : "My Team"}}
+          </button>
+          <div class="dropdown-menu">
+            <li *ngFor="let team of teams" (click)="onSelect2(team)" (click)="onSelect4(team)"> {{team.name}} <img
+                src="https://squiggle.com.au/{{team.logo}}" style=vertical-align:middle;margin:0px width="50px"
+                height="40px" (click)="onSelect2(team)"(click)="onSelect4(team)"><br>
+            </li>
+          </div>
+        </div>
+
+
+        <div *ngIf="nextFour">
+          <div class="row">
+            <div class="col-md-12" style="margin-top:10px">
+              <table class="table">
+                <table class="center">
+                  <thead class="thead-dark">
+    
+                    <th>
+                      Round
+                    </th>
+                    <th>
+                      Home Team
+                    </th>
+                    <th>
+                      Away Team
+                    </th>
+                    <th>
+                      Venue
+                    </th>
+                    <th>
+                      Date
+                    </th>
+                    <th>
+                      Tip Team
+                    </th>
+                    <th>
+                      Tip Team Chance to Win
+                    </th>
+                    <th>
+                      Tip Source
+                    </th>
+               
+
+                  </thead>
+                  
+                  <tbody>
+                    <tr *ngFor="let tip of nextFour">
+                      <td>
+                        {{tip.round}}
+                      </td>
+                      <td>
+                        {{tip.hteam}}
+                      </td>
+                      <td>
+                        {{tip.ateam}}
+                      </td>
+                      <td>
+                        {{tip.venue}}
+                      </td>
+                      <td>
+                        {{tip.date}}
+                      </td>
+                      <td>
+                        {{tip.tip}}
+                      </td>
+                      <td>
+                        {{tip.confidence}}% 
+                      </td>
+                      <td>
+                        {{tip.source}} 
+                      </td>
+              
+                    </tr>
+                  </tbody>
+                </table>
+              </table>
+             
+            </div>
+</div>
+</div>
+</table>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  <p><strong>Website made by 20753641</strong></p>
+   <p>
+    <a href="#"><strong>Back to top</strong></a>
+  </p>
+</footer> 

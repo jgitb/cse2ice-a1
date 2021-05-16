@@ -1,0 +1,46 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" routerLink="/ViewLeagueTable"><strong>AFL</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="container">
+      <a routerLink="/" class="d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
+      </a>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    
+    <ul class="navbar-nav" style="text-align: center" >
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/ViewLeagueTable"><strong>Upcoming Games</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Team"><strong>Teams</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Ladder"><strong>Standings</strong></a>
+      </li>    
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Results"><strong>Past Results</strong></a>
+      </li> 
+    </ul>
+  </div> 
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      User Stories
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" routerLink="/UserStory1">User Story 1</a> 
+      <a class="dropdown-item" routerLink="/UserStory2">User Story 2</a> 
+      <a class="dropdown-item" routerLink="/UserStory3">User Story 3</a> 
+      <a class="dropdown-item" routerLink="/UserStory4">User Story 4</a>
+      <a class="dropdown-item" routerLink="/UserStory5">User Story 5</a> 
+      <a class="dropdown-item" routerLink="/UserStory6">User Story 6</a> 
+      <a class="dropdown-item" routerLink="/UserStory7">User Story 7</a> 
+    </div> 
+  </div> 
+
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
